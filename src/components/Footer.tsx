@@ -7,8 +7,7 @@ const Footer = () => {
   return (
     <AppBar
       position="fixed"
-      color="transparent"
-      sx={{ top: "auto", bottom: 0 }}
+      sx={{ top: "auto", bottom: 0, bgcolor: "lightgrey" }}
     >
       <Typography
         align="center"

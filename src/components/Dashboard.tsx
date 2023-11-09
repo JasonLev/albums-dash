@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Toolbar from "@mui/material/Toolbar";
 import React from "react";
 import Footer from "./Footer";
+import DashTable from "./Table";
 
 type Props = {};
 
@@ -40,8 +41,10 @@ const Dashboard = (props: Props) => {
           </Grid>
           {/* Table */}
           <Grid item xs={12}>
-            <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-              <div>Table</div>
+            <Paper
+              sx={{ p: 2, display: "flex", flexDirection: "column", mb: 3 }}
+            >
+              <DashTable />
             </Paper>
           </Grid>
         </Grid>
