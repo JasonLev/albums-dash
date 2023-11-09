@@ -12,7 +12,7 @@ const DashTable = () => {
 
   return (
     <>
-      <DashHeading>Albums</DashHeading>
+      <DashHeading>Albums Details</DashHeading>
       <Table stickyHeader aria-label="albums table">
         <TableHead>
           <TableRow>

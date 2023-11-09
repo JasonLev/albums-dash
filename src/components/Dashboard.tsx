@@ -6,10 +6,16 @@ import Toolbar from "@mui/material/Toolbar";
 import React from "react";
 import Footer from "./Footer";
 import DashTable from "./Table";
+import FilterInput from "./FilterInput";
+import useJSONPlaceholderAPI from "../hooks/useJSONPlaceholderAPI";
+import { dedupedGenres } from "../utils";
+import FilteredGenreList from "./FilteredGenreList";
 
 type Props = {};
 
 const Dashboard = (props: Props) => {
+  const { albums } = useJSONPlaceholderAPI();
+
   return (
     <Box
       component="main"
@@ -26,14 +32,29 @@ const Dashboard = (props: Props) => {
       <Toolbar />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <Grid container spacing={3}>
-          {/* Chart */}
-          <Grid item xs={12} md={8} lg={9}>
+          {/* Filter Input & List */}
+          <Grid item xs={12} md={5} lg={4}>
             <Paper
               sx={{
                 p: 2,
                 display: "flex",
                 flexDirection: "column",
-                height: 240,
+                gap: "20px",
+                height: 400,
+              }}
+            >
+              <FilterInput genres={dedupedGenres(albums)} />
+              <FilteredGenreList />
+            </Paper>
+          </Grid>
+          {/* Chart */}
+          <Grid item xs={12} md={7} lg={8}>
+            <Paper
+              sx={{
+                p: 2,
+                display: "flex",
+                flexDirection: "column",
+                height: 400,
               }}
             >
               <div>Chart</div>

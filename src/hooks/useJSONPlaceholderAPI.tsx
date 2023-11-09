@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
-
-type FetchedAlbum = {
-  id: number;
-  title: string;
-};
-type Album = FetchedAlbum & {
-  genre: string;
-  songCount: number;
-};
+import { Album, FetchedAlbum } from "../types";
 
 const API_URL = "https://jsonplaceholder.typicode.com/albums";
 
