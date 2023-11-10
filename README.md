@@ -17,6 +17,8 @@ The data is sourced by combining an external API call to the [JSONPlaceholderAPI
 - Node(includes npm): ^14.0.0
 - Any web browser
 
+---
+
 ## Decisions Made For This Project
 
 ### Libraries Used
