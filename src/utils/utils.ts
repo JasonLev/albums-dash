@@ -1,4 +1,4 @@
-import { Album, AlbumDataByGenre } from "./types";
+import { Album, AlbumDataByGenre } from "../types";
 
 export const dedupedGenres = (albums: Album[]) => {
   return albums.reduce((acc: string[], curr) => {

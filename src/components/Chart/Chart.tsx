@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "@mui/material/styles";
-import DashHeading from "./lib/DashHeading";
+import DashHeading from "../lib/DashHeading";
 import {
   Bar,
   BarChart,
@@ -12,19 +12,24 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import useJSONPlaceholderAPI from "../hooks/useJSONPlaceholderAPI";
-import { useGenres } from "./contexts/GenresContext";
-import { getAlbumDataByGenre, getFilteredAlbums } from "../utils";
+import useJSONPlaceholderAPI from "../../hooks/useJSONPlaceholderAPI";
+import { useGenres } from "../contexts/GenresContext";
+import { getAlbumDataByGenre, getFilteredAlbums } from "../../utils/utils";
 
 const Chart = () => {
   const { albums } = useJSONPlaceholderAPI();
 
+  const theme = useTheme();
   const filteredGenres = useGenres();
 
   const filteredAlbums = getFilteredAlbums(filteredGenres, albums);
-  const theme = useTheme();
-
-  const SongDataByGenre = getAlbumDataByGenre(filteredAlbums);
+  const songDataByGenre = getAlbumDataByGenre(filteredAlbums);
+  /*   The variables above (filteredAlbums and songDataByGenre) are each decent candidates
+  to serve as the data for the BarChart below.
+  Rather than combining them (and thereby use one helper function),
+  the two are separated to provide more flexibility/options when deciding what to display
+  in the BarChart. 
+ */
 
   return (
     <>
@@ -33,7 +38,7 @@ const Chart = () => {
         <BarChart
           width={150}
           height={40}
-          data={SongDataByGenre}
+          data={songDataByGenre}
           margin={{
             top: 5,
             right: 30,

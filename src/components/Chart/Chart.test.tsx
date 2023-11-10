@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import Chart from "./Chart";
 
 const { ResizeObserver } = window;
 
@@ -19,8 +19,8 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
-test("renders the AppBar's text: 'Albums Dashboard'", () => {
-  render(<App />);
-  const AppBarText = screen.getByText(/Albums Dashboard/i);
-  expect(AppBarText).toBeInTheDocument();
+test("renders the Chart's heading text: 'Albums by Genre -- Data Details'", () => {
+  render(<Chart />);
+  const ChartHeadingText = screen.getByText(/Albums by Genre -- Data Details/i);
+  expect(ChartHeadingText).toBeInTheDocument();
 });

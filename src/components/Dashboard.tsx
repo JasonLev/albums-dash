@@ -4,11 +4,11 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import React, { useReducer } from "react";
 import Footer from "./Footer";
-import DashTable from "./Table";
-import FilterGenre from "./FilterGenre";
+import DashTable from "./Table/Table";
+import FilterGenre from "./FilterGenre/FilterGenre";
 import useJSONPlaceholderAPI from "../hooks/useJSONPlaceholderAPI";
-import { dedupedGenres } from "../utils";
-import Chart from "./Chart";
+import { dedupedGenres } from "../utils/utils";
+import Chart from "./Chart/Chart";
 
 const Dashboard = () => {
   const { albums } = useJSONPlaceholderAPI();

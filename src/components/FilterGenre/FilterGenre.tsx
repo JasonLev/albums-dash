@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import DashHeading from "./lib/DashHeading";
+import DashHeading from "../lib/DashHeading";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { useGenres, useGenresDispatch } from "./contexts/GenresContext";
+import { useGenres, useGenresDispatch } from "../contexts/GenresContext";
 import Button from "@mui/material/Button";
-import FilteredGenreList from "./FilteredGenreList";
+import FilteredGenreList from "../FilteredGenreList";
 
 type Props = {
   genres: string[];

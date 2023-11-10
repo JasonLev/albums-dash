@@ -4,10 +4,10 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import DashHeading from "./lib/DashHeading";
-import useJSONPlaceholderAPI from "../hooks/useJSONPlaceholderAPI";
-import { useGenres } from "./contexts/GenresContext";
-import { getFilteredAlbums } from "../utils";
+import DashHeading from "../lib/DashHeading";
+import useJSONPlaceholderAPI from "../../hooks/useJSONPlaceholderAPI";
+import { useGenres } from "../contexts/GenresContext";
+import { getFilteredAlbums } from "../../utils/utils";
 
 const DashTable = () => {
   const { albums } = useJSONPlaceholderAPI();
