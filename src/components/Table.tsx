@@ -21,7 +21,6 @@ const DashTable = () => {
   return (
     <>
       <DashHeading>Albums Details</DashHeading>
-      <FilteredGenreList textOnly />
       <Table stickyHeader aria-label="albums table">
         <TableHead>
           <TableRow>
