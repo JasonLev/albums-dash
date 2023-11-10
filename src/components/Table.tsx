@@ -6,17 +6,15 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DashHeading from "./lib/DashHeading";
 import useJSONPlaceholderAPI from "../hooks/useJSONPlaceholderAPI";
-import FilteredGenreList from "./FilteredGenreList";
 import { useGenres } from "./contexts/GenresContext";
+import { getFilteredAlbums } from "../utils";
 
 const DashTable = () => {
   const { albums } = useJSONPlaceholderAPI();
 
   const filteredGenres = useGenres();
 
-  const filteredAlbums = filteredGenres.length
-    ? albums.filter((album) => filteredGenres.includes(album.genre))
-    : albums;
+  const filteredAlbums = getFilteredAlbums(filteredGenres, albums);
 
   return (
     <>
@@ -24,9 +22,15 @@ const DashTable = () => {
       <Table stickyHeader aria-label="albums table">
         <TableHead>
           <TableRow>
-            <TableCell>Album Title</TableCell>
-            <TableCell>Genre</TableCell>
-            <TableCell align="right">Song Count</TableCell>
+            <TableCell>
+              <b>Album Title</b>
+            </TableCell>
+            <TableCell>
+              <b>Genre</b>
+            </TableCell>
+            <TableCell align="right">
+              <b>Song Count</b>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

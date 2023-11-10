@@ -58,7 +58,7 @@ const Dashboard = () => {
           {/* Table */}
           <Grid item xs={12}>
             <Paper
-              sx={{ p: 2, display: "flex", flexDirection: "column", mb: 3 }}
+              sx={{ p: 2, display: "flex", flexDirection: "column", mb: 5 }}
             >
               <DashTable />
             </Paper>
