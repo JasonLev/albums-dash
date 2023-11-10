@@ -37,6 +37,7 @@ const useJSONPlaceholderAPI = () => {
     };
     buildData();
   }, []);
+
   return { isError, isLoading, albums };
 };
 

@@ -21,8 +21,7 @@ const Footer = () => {
         {" by "}
         <Link color="inherit" href="https://github.com/JasonLev">
           Jason Levy
-        </Link>{" "}
-        {new Date().getFullYear()}
+        </Link>
         {"."}
       </Typography>
     </AppBar>
